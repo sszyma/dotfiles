@@ -123,9 +123,3 @@
 (use-package lsp-mode
   :ensure t)
 
-;; A plain-text knowledge management system
-(use-package org-roam
-  :ensure t
-  :init
-  (setq org-roam-v2-ack t))
-
