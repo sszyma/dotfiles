@@ -43,46 +43,14 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; Git integration
-(use-package magit
-  :ensure t)
-
 ;; Theme
 (use-package zenburn-theme
   :ensure t
   :init (load-theme 'zenburn))
 
-;; Parenthesis handling
-(use-package paredit
-  :ensure t
-  :init
-  (progn
-    (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-    (add-hook 'geiser-mode-hook 'paredit-mode)
-    (add-hook 'geiser-repl-mode-hook 'paredit-mode)
-    (add-hook 'racket-mode 'paredit-mode))
-  :config
-  (show-paren-mode t))
-
-;; LateX support
-(use-package tex
-  :ensure auctex)
-
-;; Scheme support
-(use-package geiser-chez
-  :ensure t
-  :init
-  (setq geiser-chez-binary "chez"))
-
-;; Common Lisp support
-(use-package slime
+;; Git integration
+(use-package magit
   :ensure t)
-
-;; Python support
-(use-package elpy
-  :ensure t
-  :init
-  (elpy-enable))
 
 ;; Syntax checking
 (use-package flycheck
@@ -115,11 +83,38 @@
 (use-package projectile
   :ensure t)
 
+;; Parenthesis handling
+(use-package paredit
+  :ensure t
+  :init
+  (progn
+    (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+    (add-hook 'geiser-mode-hook 'paredit-mode)
+    (add-hook 'geiser-repl-mode-hook 'paredit-mode)
+    (add-hook 'racket-mode 'paredit-mode))
+  :config
+  (show-paren-mode t))
+
 ;; Scheme support
 (use-package racket-mode
   :ensure t)
 
-;; Language Server Protocol support for Emacs
-(use-package lsp-mode
+;; Scheme support
+(use-package geiser-chez
+  :ensure t
+  :init
+  (setq geiser-chez-binary "chez"))
+
+;; Common Lisp support
+(use-package slime
   :ensure t)
 
+;; Python support
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+
+;; LateX support
+(use-package tex
+  :ensure auctex)
