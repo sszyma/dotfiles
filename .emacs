@@ -158,6 +158,8 @@
 (use-package racket-mode
   :ensure t)
 (use-package slime
-  :ensure t)
+  :ensure t
+  :config
+  (setq inferior-lisp-program "sbcl"))
 (use-package cider
   :ensure t)
